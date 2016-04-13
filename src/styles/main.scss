@@ -1,0 +1,160 @@
+html, body, #root, .wrap {
+    height: 100%;
+}
+
+.TopBar {
+    height: 40px;
+    background-color: #D7B98E;
+    padding: 3px;
+}
+
+.ContentArea {
+    height: calc(100% - 80px);
+    overflow-y: auto;
+}
+
+.PathBtn {
+    width: 95%;
+    height: 35px;
+    background-color: white;
+    border: 1px solid black;
+}
+
+.PathBtn li {
+    background-color: transparent;
+    margin: 2px;
+    display: inline-block;
+}
+
+.PathBtn li::before {
+    content: '#';
+    border: solid 1px white;
+    padding: 2px;
+    margin: 0 10px 0 0;
+}
+
+.FooterBar {
+    height: 40px;
+    background-color: firebrick;
+    padding: 3px;
+}
+
+.pagination {
+    margin: 0 auto;
+    width: 400px;
+    height: 50px;
+    ul {
+    	list-style: none;
+    	li {
+            border-style: solid;
+            border-color: #DDDDDD;
+            border-top-width: 1px;
+            border-bottom-width: 1px;
+            border-right-width: 1px;
+            border-left-width: 0px;
+    		font-size: 12px;
+    		text-align: center;
+    		line-height: 37px;
+    		width: 35px;
+    		height: 35px;
+    		display: inline-block;
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+    	}
+
+        li:first-child {
+            border-width: 1px;
+        }
+
+        li:first-child::before {
+            content: '<<';
+        }
+
+        li:nth-child(2)::before {
+            content: '<';
+        }
+
+        li:nth-last-child(2)::before {
+            content: '>';
+        }
+
+        li:last-child::before {
+            content: '>>';
+        }
+
+    	li:hover {
+    		cursor: pointer;
+    	}
+
+    	.currentPage {
+    		background-color: #337AB7;
+    	}
+
+    	.hide {
+    		display: none;
+    	}
+
+        li.disabledBtn {
+            cursor: no-drop;
+        }
+    }
+}
+
+/*
+We set the element we are applying our loading mask to relative  
+*/
+.loading-mask {
+  position: relative;
+  //height: auto;
+}
+
+/*
+Because we set .loading-mask relative, we can span our ::before  
+element over the whole parent element  
+*/
+.loading-mask::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.25);
+}
+
+/*
+Spin animation for .loading-mask::after  
+*/
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+/*
+The loading throbber is a single spinning element with three  
+visible borders and a border-radius of 50%.  
+Instead of a border we could also use a font-icon or any  
+image using the content attribute.  
+*/
+.loading-mask::after {
+  content: "";
+  position: absolute;
+  border-width: 3px;
+  border-style: solid;
+  border-color: transparent rgb(255, 255, 255) rgb(255, 255, 255);
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  top: calc(50% - 12px);
+  left: calc(50% - 12px);
+  animation: 2s linear 0s normal none infinite running spin;
+  filter: drop-shadow(0 0 2 rgba(0, 0, 0, 0.33));
+}
