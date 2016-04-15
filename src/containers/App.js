@@ -32,7 +32,7 @@ function mapStateToProps(state) {
   return {
     datas: state.datas.datas,
     entries: state.datas.entries,
-    total: state.datas.total,
+    total: state.datas.entries.length,
     pathBtns: state.pathBtns,
     maskFlag: state.mask,
     currentPage: state.pagination.currentPage,

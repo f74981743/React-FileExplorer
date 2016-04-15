@@ -19,7 +19,6 @@ export default class PathBtn extends Component {
                         }     
                         readEntries();
                     } else {
-                        actions.countTotal(entryAry.length);
                         actions.readEntries(entryAry);
                         var n = 0,
                             length = Math.min(dataPerPage, entryAry.length);
@@ -47,6 +46,7 @@ export default class PathBtn extends Component {
                 });
             };
             actions.resetDatas();
+            actions.clickPage(1, [1, 2, 3, 4, 5]);
             readEntries();
             var newPathBtns = pathBtns.slice(0, index + 1);
             actions.clickPathBtn(newPathBtns);

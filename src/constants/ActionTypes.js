@@ -8,6 +8,7 @@ export const COUNT_TOTAL = 'COUNT_TOTAL';
 export const RESET_DATAS = 'RESET_DATAS';
 export const ADD_PATH_BTN = 'ADD_PATH_BTN';
 export const CLICK_PATH_BTN = 'CLICK_PATH_BTN';
+export const RESET_PATH_BTN = 'RESET_PATH_BTN';
 export const MASK = 'MASK';
 export const CLICK_PAGE = 'CLICK_PAGE';
 export const CHANGE_DATA_PER_PAGE = 'CHANGE_DATA_PER_PAGE';

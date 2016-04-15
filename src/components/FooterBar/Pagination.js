@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react';
+import classNames from 'classnames';
 
 export default class Pagination extends Component {
 	constructor(props, context) {
@@ -37,12 +38,30 @@ export default class Pagination extends Component {
 			page5 = pageState[4];
 
 		let totalPage;
-
+		
+		
 		if (total % dataPerPage === 0) {
 			totalPage = Math.floor(total / dataPerPage);
 		} else {
 			totalPage = Math.floor(total / dataPerPage) + 1;
 		}
+		
+		var firstBtnCls = classNames({
+				disabledBtn: currentPage === 1,
+				hide: total === 0
+			}),
+			prevBtnCls = classNames({
+				disabledBtn: currentPage === 1,
+				hide: total === 0
+			}),
+			nextBtnCls = classNames({
+				disabledBtn: (currentPage === totalPage && totalPage),
+				hide: total === 0
+			}),
+			lastBtnCls = classNames({
+				disabledBtn: (currentPage === totalPage && totalPage),
+				hide: total === 0
+			});
         
         var readData = (start) => {
             var n = start,
@@ -84,7 +103,7 @@ export default class Pagination extends Component {
                                 }
                             }
 						}
-						className={(currentPage == 1) ? 'disabledBtn' : ''}
+						className={firstBtnCls}
 					></li>
 					<li data-number="prev" ref={(n) => {prev = n}}
 						onClick={() => {
@@ -102,7 +121,7 @@ export default class Pagination extends Component {
 								}
 							}
 						}
-						className={(currentPage == 1) ? 'disabledBtn' : ''}
+						className={prevBtnCls}
 					></li>
 					<li data-number="1" ref={(n) => {index1 = n}}
 						onClick={() => {
@@ -200,7 +219,7 @@ export default class Pagination extends Component {
 
 							}
 						}
-						className={(currentPage === totalPage && totalPage) ? 'disabledBtn' : ''}
+						className={nextBtnCls}
 					>
 					</li>
 					<li
@@ -216,7 +235,7 @@ export default class Pagination extends Component {
                                 }
 							}
 						}
-						className={(currentPage === totalPage && totalPage) ? 'disabledBtn' : ''}
+						className={lastBtnCls}
 					></li>
 				</ul>
 			</div>

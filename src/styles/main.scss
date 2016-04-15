@@ -4,7 +4,6 @@ html, body, #root, .wrap {
 
 .TopBar {
     height: 40px;
-    background-color: #D7B98E;
     padding: 3px;
 }
 
@@ -22,15 +21,20 @@ html, body, #root, .wrap {
 
 .PathBtn li {
     background-color: transparent;
-    margin: 2px;
+    margin: 5px 2px 2px 2px;
     display: inline-block;
-}
-
-.PathBtn li::before {
-    content: '#';
-    border: solid 1px white;
-    padding: 2px;
-    margin: 0 10px 0 0;
+    color: #4c4c4c;
+    &:hover {
+        color: #6dc2d7;
+        cursor: pointer;
+    }
+    
+    &::before {
+        content: '>';
+        border: solid 1px white;
+        padding: 2px;
+        margin: 0 10px 0 0;
+    }
 }
 
 .FooterBar {

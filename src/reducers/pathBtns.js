@@ -1,4 +1,4 @@
-import {ADD_PATH_BTN, CLICK_PATH_BTN} from '../constants/ActionTypes';
+import {ADD_PATH_BTN, CLICK_PATH_BTN, RESET_PATH_BTN} from '../constants/ActionTypes';
 
 export default function pathBtns(state = [], action) {
 	switch(action.type) {
@@ -8,6 +8,8 @@ export default function pathBtns(state = [], action) {
             ]
         case CLICK_PATH_BTN:
             return action.items
+		case RESET_PATH_BTN:
+			return []
 		default:
 			return state
 	}

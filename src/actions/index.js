@@ -14,13 +14,6 @@ export function readEntries(entries) {
     }
 }
 
-export function countTotal(total) {
-    return {
-        type: types.COUNT_TOTAL,
-        total: total
-    }
-}
-
 export function resetDatas() {
     return {
         type: types.RESET_DATAS
@@ -38,6 +31,12 @@ export function clickPathBtn(items) {
     return {
         type: types.CLICK_PATH_BTN,
         items: items
+    }
+}
+
+export function resetPathBtn() {
+    return {
+        type: types.RESET_PATH_BTN
     }
 }
 

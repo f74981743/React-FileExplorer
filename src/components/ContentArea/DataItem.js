@@ -21,7 +21,6 @@ export default class DataItem extends Component {
                         }     
                         readEntries();
                     } else {
-                        actions.countTotal(entryAry.length);
                         actions.readEntries(entryAry);
                         var n = 0,
                             length = Math.min(dataPerPage, entryAry.length);

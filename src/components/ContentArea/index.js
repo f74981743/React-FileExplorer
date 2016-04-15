@@ -28,7 +28,8 @@ export default class ContentArea extends Component {
     
     var length = e.dataTransfer.items.length,
         entryAry = [];
-    actions.countTotal(length);
+    actions.resetDatas();
+    actions.resetPathBtn();
     for (var i = 0; i < length; i++) {
         entryAry.push(e.dataTransfer.items[i].webkitGetAsEntry());
         actions.readData(e.dataTransfer.items[i].webkitGetAsEntry());
