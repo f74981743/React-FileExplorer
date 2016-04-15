@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { convertSizeUnit, convertTimestamp } from '../../utils';
 
-export default class DataItem extends Component {
+export default class GridRow extends Component {
   constructor(props, context) {
     super(props, context);
   }
@@ -57,9 +57,20 @@ export default class DataItem extends Component {
     let {data} = this.props;
     
     return (
-        <div className="itemBlock" onDoubleClick={this.dbClick.bind(this)}>
-            {(data.isDirectory) ? 'dir' : data.type}
-        </div>
+        <tr onDoubleClick={this.dbClick.bind(this)}>
+            <td>
+                {data.name}
+            </td>
+            <td>
+                {(data.isDirectory) ? 'dir' : data.type}
+            </td>
+            <td>
+                {(data.lastModified) ? convertTimestamp(data.lastModified) : '--'}
+            </td>
+            <td>
+                {(data.size) ? convertSizeUnit(data.size) : '--'}
+            </td>
+        </tr>
     );
   }
 }

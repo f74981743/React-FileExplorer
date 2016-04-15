@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react';
+import GridRow from './GridRow';
 import DataItem from './DataItem';
 
 export default class ContentArea extends Component {
@@ -41,7 +42,7 @@ export default class ContentArea extends Component {
     const {datas, actions, dataPerPage} = this.props;
     return (
 		<div className="ContentArea" onDragEnter={this.dragEnter} onDragOver={this.dragOver} onDragLeave={this.dragLeave} onDrop={this.dropEvent.bind(this)}>
-            <table className="table table-hover">
+            <table className="table table-hover hide">
                 <thead>
                     <tr>
                         <th>Name</th>
@@ -53,11 +54,16 @@ export default class ContentArea extends Component {
                 <tbody>
                     {
                         datas.map((data, index) => 
-                            <DataItem data={data} dataPerPage={dataPerPage} actions={actions} key={index} /> 
+                            <GridRow data={data} dataPerPage={dataPerPage} actions={actions} key={index} /> 
                         )
                     }
                 </tbody>
             </table>
+            {
+                datas.map((data, index) =>
+                    <DataItem data={data} dataPerPage={dataPerPage} actions={actions} key={index} />
+                )
+            }
         </div>
     );
   }
