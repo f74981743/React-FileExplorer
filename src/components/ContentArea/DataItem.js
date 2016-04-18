@@ -53,13 +53,49 @@ export default class DataItem extends Component {
       }
   }
   
+  componentDidUpdate () {
+    this.loadImageToCanvas()
+  }
+  
+  loadImageToCanvas() {
+    const {data} = this.props;
+    var URL = window.webkitURL || window.URL,
+        canvas = React.findDOMNode(this.refs.canvas);
+    if (data.type) {
+        if (data.type.split('/')[0] === 'image') {
+            var ctx = canvas.getContext("2d");
+            var url = URL.createObjectURL(data);
+            var img = new Image();
+            img.onload = () => {
+                ctx.drawImage(img, 0, 0, 100, 100 * img.height / img.width);
+            }
+            img.src = url;
+        }
+    }
+  }
+  
   render() {
-    let {data} = this.props;
+    let {data} = this.props,
+        canvas,
+        item;
+    
+    if (data.type || data.type === '') {
+        if (data.type.split('/')[0] === 'image') {
+            item = <canvas width="100" height="100" ref='canvas' />
+        } else {
+            item = <div className="file-icon file-icon-xl" data-type={data.type.split('/')[1]}></div>
+        }
+    } else {
+        item = <div className="folder"></div>
+    }
     
     return (
-        <div className="itemBlock" onDoubleClick={this.dbClick.bind(this)}>
-            {(data.isDirectory) ? 'dir' : data.type}
-        </div>
+        <a href="#" className="col-md-1" onDoubleClick={this.dbClick.bind(this)}>
+            {item}
+            <div className="caption">
+                <span>{data.name}</span>
+            </div>
+        </a>
     );
   }
 }

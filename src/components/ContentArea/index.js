@@ -41,7 +41,7 @@ export default class ContentArea extends Component {
   render() {
     const {datas, actions, dataPerPage} = this.props;
     return (
-		<div className="ContentArea" onDragEnter={this.dragEnter} onDragOver={this.dragOver} onDragLeave={this.dragLeave} onDrop={this.dropEvent.bind(this)}>
+		<div className="ContentArea container-fluid" onDragEnter={this.dragEnter} onDragOver={this.dragOver} onDragLeave={this.dragLeave} onDrop={this.dropEvent.bind(this)}>
             <table className="table table-hover hide">
                 <thead>
                     <tr>
@@ -59,11 +59,14 @@ export default class ContentArea extends Component {
                     }
                 </tbody>
             </table>
-            {
-                datas.map((data, index) =>
-                    <DataItem data={data} dataPerPage={dataPerPage} actions={actions} key={index} />
-                )
-            }
+            <div className="row">
+                {
+                    datas.map((data, index) =>
+                        <DataItem data={data} dataPerPage={dataPerPage} actions={actions} key={index} />
+                    )
+                }
+            </div>
+            
         </div>
     );
   }
