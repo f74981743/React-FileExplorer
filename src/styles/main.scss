@@ -166,10 +166,11 @@ image using the content attribute.
 //folder
 
 .folder {
-    width: 112px;
-    height: 79px;
+    width: 75px;
+    height: 53px;
     margin: 0 auto;
-    margin-top: 50px;
+    margin-top: 25px;
+    margin-bottom: 18px;
     position: relative;
     background-color: #708090;
     border-radius: 0 6px 6px 6px;
@@ -191,6 +192,7 @@ image using the content attribute.
     font-family: Arial, Tahoma, sans-serif;
     font-weight: 300;
     display: block;
+    margin: 0 auto;
     width: 24px;
     height: 32px;
     background: #018FEF;
@@ -276,8 +278,8 @@ image using the content attribute.
 }
 
 .file-icon-xl {
-    width: 96px;
-    height: 128px;
+    width: 72px;
+    height: 96px;
     border-radius: 4px;
     &::before {
         border-bottom-left-radius: 4px;
@@ -287,6 +289,11 @@ image using the content attribute.
         font-size: 24px;
         padding: 4px 10px;
     }
+}
+
+
+.caption {
+   text-align: center;
 }
 
 /* fileicon.types */

@@ -67,7 +67,7 @@ export default class DataItem extends Component {
             var url = URL.createObjectURL(data);
             var img = new Image();
             img.onload = () => {
-                ctx.drawImage(img, 0, 0, 100, 100 * img.height / img.width);
+                ctx.drawImage(img, 0, 0, 129, 129 * img.height / img.width);
             }
             img.src = url;
         }
@@ -81,7 +81,7 @@ export default class DataItem extends Component {
     
     if (data.type || data.type === '') {
         if (data.type.split('/')[0] === 'image') {
-            item = <canvas width="100" height="100" ref='canvas' />
+            item = <canvas ref='canvas' />
         } else {
             item = <div className="file-icon file-icon-xl" data-type={data.type.split('/')[1]}></div>
         }
@@ -91,7 +91,9 @@ export default class DataItem extends Component {
     
     return (
         <a href="#" className="col-md-1" onDoubleClick={this.dbClick.bind(this)}>
-            {item}
+            <div className="icon-container">
+                {item}
+            </div>
             <div className="caption">
                 <span>{data.name}</span>
             </div>
