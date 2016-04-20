@@ -9,13 +9,13 @@ import Wrapper from '../components/Wrapper';
  * component to make the Redux store available to the rest of the app.
  */
 export default class App extends Component {
-  render() {
-    // we can use ES6's object destructuring to effectively 'unpack' our props
-    
-    return (
-      <Wrapper {...this.props} />
-    );
-  }
+    render() {
+        // we can use ES6's object destructuring to effectively 'unpack' our props
+
+        return (
+            <Wrapper {...this.props} />
+        );
+    }
 }
 
 /*App.propTypes = {
@@ -29,16 +29,18 @@ export default class App extends Component {
  * object. By mapping it to props, we can pass it to the child component Counter.
  */
 function mapStateToProps(state) {
-  return {
-    datas: state.datas.datas,
-    entries: state.datas.entries,
-    total: state.datas.entries.length,
-    pathBtns: state.pathBtns,
-    maskFlag: state.mask,
-    currentPage: state.pagination.currentPage,
-	pageState: state.pagination.pageState,
-	dataPerPage: state.dataPerPage
-  };
+    return {
+        datas: state.datas.datas,
+        entries: state.datas.entries,
+        total: state.datas.entries.length,
+        pathBtns: state.pathBtns,
+        maskFlag: state.mask,
+        currentPage: state.pagination.currentPage,
+        pageState: state.pagination.pageState,
+        dataPerPage: state.dataPerPage,
+        displayMode: state.displayMode,
+        displayModeMenu: state.displayModeMenu
+    };
 }
 
 /**
@@ -50,9 +52,9 @@ function mapStateToProps(state) {
  * More info: http://redux.js.org/docs/api/bindActionCreators.html
  */
 function mapDispatchToProps(dispatch) {
-  return {
-    actions: bindActionCreators(Actions, dispatch)
-  };
+    return {
+        actions: bindActionCreators(Actions, dispatch)
+    };
 }
 
 /**
@@ -64,6 +66,6 @@ function mapDispatchToProps(dispatch) {
  */
 
 export default connect(
-  mapStateToProps,
-  mapDispatchToProps
+    mapStateToProps,
+    mapDispatchToProps
 )(App);

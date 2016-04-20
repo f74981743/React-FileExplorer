@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import GridRow from './GridRow';
 import DataItem from './DataItem';
+import classNames from 'classnames';
 
 export default class ContentArea extends Component {
   constructor(props, context) {
@@ -39,10 +40,21 @@ export default class ContentArea extends Component {
   }
 	
   render() {
-    const {datas, actions, dataPerPage} = this.props;
+    const {datas, actions, dataPerPage, displayMode} = this.props;
+    console.log(displayMode);
+    var gridCls = classNames({
+            table: true,
+            'table-hover': true,
+            hide: displayMode === 1
+        }),
+        iconViewCls = classNames({
+           row: true,
+           hide: displayMode === 0
+        });
+    
     return (
 		<div className="ContentArea container-fluid" onDragEnter={this.dragEnter} onDragOver={this.dragOver} onDragLeave={this.dragLeave} onDrop={this.dropEvent.bind(this)}>
-            <table className="table table-hover hide">
+            <table className={gridCls}>
                 <thead>
                     <tr>
                         <th>Name</th>
@@ -59,7 +71,7 @@ export default class ContentArea extends Component {
                     }
                 </tbody>
             </table>
-            <div className="row">
+            <div className={iconViewCls}>
                 {
                     datas.map((data, index) =>
                         <DataItem data={data} dataPerPage={dataPerPage} actions={actions} key={index} />

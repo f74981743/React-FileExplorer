@@ -3,13 +3,14 @@ html, body, #root, .wrap {
 }
 
 .TopBar {
-    height: 40px;
+    height: 80px;
     padding: 3px;
 }
 
 .ContentArea {
-    height: calc(100% - 80px);
+    height: calc(100% - 120px);
     overflow-y: auto;
+    clear: both;
 }
 
 .PathBtn {
@@ -335,4 +336,18 @@ image using the content attribute.
 .file-icon[data-type=gif],
 .file-icon[data-type=png] {
   background: #F4B400;
+}
+
+.dropdown-toggle {
+    float: right;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 40px;
+    left: 91%;
+}
+
+.dropdown-menu.show {
+    display: block;
 }

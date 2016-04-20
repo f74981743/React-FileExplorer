@@ -13,3 +13,5 @@ export const MASK = 'MASK';
 export const CLICK_PAGE = 'CLICK_PAGE';
 export const CHANGE_DATA_PER_PAGE = 'CHANGE_DATA_PER_PAGE';
 export const READ_ENTRIES = 'READ_ENTRIES';
+export const SELECT_MODE = 'SELECT_MODE';
+export const SHOW_MENU = 'SHOW_MENU';

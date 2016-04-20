@@ -54,3 +54,17 @@ export function clickPage(nextPage, pageState) {
 	pageState: pageState
   }
 }
+
+export function selectMode(displayMode) {
+    return {
+        type: types.SELECT_MODE,
+        displayMode: displayMode
+    }
+}
+
+export function showMenu(flag) {
+    return {
+        type: types.SHOW_MENU,
+        flag: flag
+    }
+}

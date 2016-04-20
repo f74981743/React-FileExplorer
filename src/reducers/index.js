@@ -4,6 +4,8 @@ import pathBtns from './pathBtns';
 import mask from './mask';
 import pagination from './pagination';
 import dataPerPage from './dataPerPage';
+import displayMode from './displayMode';
+import displayModeMenu from './displayModeMenu';
 
 /**
  * combineReducers is important to understand. As your app might grow in size
@@ -19,11 +21,13 @@ import dataPerPage from './dataPerPage';
  * More info: http://rackt.org/redux/docs/api/combineReducers.html
  */
 const rootReducer = combineReducers({
-  datas,
-  pathBtns,
-  mask,
-  pagination,
-  dataPerPage
+    datas,
+    pathBtns,
+    mask,
+    pagination,
+    dataPerPage,
+    displayMode,
+    displayModeMenu
 });
 
 export default rootReducer;

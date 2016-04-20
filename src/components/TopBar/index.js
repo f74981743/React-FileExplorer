@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import PathBtn from './PathBtn';
+import ModeSelector from './ModeSelector';
 
 export default class TopBar extends Component {
   constructor(props, context) {
@@ -7,7 +8,7 @@ export default class TopBar extends Component {
   }
 	
   render() {
-    const {datas, pathBtns, actions, dataPerPage} = this.props;
+    const {datas, pathBtns, actions, dataPerPage, displayModeMenu} = this.props;
     return (
 		<div className="TopBar">
             <ul className="PathBtn">
@@ -17,6 +18,7 @@ export default class TopBar extends Component {
                     )
                 }
             </ul>
+            <ModeSelector actions={actions} displayModeMenu={displayModeMenu} />
         </div>
     );
   }
