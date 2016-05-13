@@ -17,7 +17,7 @@ html, body, #root, .wrap {
     width: 95%;
     height: 35px;
     background-color: white;
-    border: 1px solid black;
+    border: 1px solid #d0d0d0;
 }
 
 .PathBtn li {
@@ -128,7 +128,7 @@ element over the whole parent element
   right: 0;
   bottom: 0;
   left: 0;
-  background-color: rgba(0, 0, 0, 0.25);
+  background-color: transparent;
 }
 
 /*
@@ -154,7 +154,7 @@ image using the content attribute.
   position: absolute;
   border-width: 3px;
   border-style: solid;
-  border-color: transparent rgb(255, 255, 255) rgb(255, 255, 255);
+  border-color: transparent black black;
   border-radius: 50%;
   width: 24px;
   height: 24px;
@@ -162,6 +162,13 @@ image using the content attribute.
   left: calc(50% - 12px);
   animation: 2s linear 0s normal none infinite running spin;
   filter: drop-shadow(0 0 2 rgba(0, 0, 0, 0.33));
+}
+
+.dataItem {
+    float: left;
+    margin-left: 3px;
+    width: 100px;
+    height: 200px;
 }
 
 //folder

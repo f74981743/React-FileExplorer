@@ -90,7 +90,7 @@ export default class DataItem extends Component {
     }
     
     return (
-        <a href="#" className="col-md-1" onDoubleClick={this.dbClick.bind(this)}>
+        <a href="#" className="dataItem" onDoubleClick={this.dbClick.bind(this)}>
             <div className="icon-container">
                 {item}
             </div>

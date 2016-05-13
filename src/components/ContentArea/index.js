@@ -41,19 +41,22 @@ export default class ContentArea extends Component {
 	
   render() {
     const {datas, actions, dataPerPage, displayMode} = this.props;
-    console.log(displayMode);
     var gridCls = classNames({
             table: true,
             'table-hover': true,
-            hide: displayMode === 1
+            hide: displayMode === 1 || datas.length === 0
         }),
         iconViewCls = classNames({
            row: true,
            hide: displayMode === 0
-        });
+        }),
+        styleH1 = {
+            display: (datas.length === 0) ? 'block' : 'none'
+        }
     
     return (
 		<div className="ContentArea container-fluid" onDragEnter={this.dragEnter} onDragOver={this.dragOver} onDragLeave={this.dragLeave} onDrop={this.dropEvent.bind(this)}>
+            <h1 style={styleH1}>Drop File/Folder here</h1>
             <table className={gridCls}>
                 <thead>
                     <tr>
