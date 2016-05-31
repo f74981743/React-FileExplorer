@@ -18,10 +18,19 @@ export default class App extends Component {
     }
 }
 
-/*App.propTypes = {
-  counter: PropTypes.number.isRequired,
+App.propTypes = {
+  datas: PropTypes.array.isRequired,
+  entries: PropTypes.array.isRequired,
+  total: PropTypes.number.isRequired,
+  pathBtns: PropTypes.array.isRequired,
+  maskFlag: PropTypes.bool.isRequired,
+  currentPage: PropTypes.number.isRequired,
+  pageState: PropTypes.array.isRequired,
+  dataPerPage: PropTypes.number.isRequired,
+  displayMode: PropTypes.number.isRequired,
+  displayModeMenu: PropTypes.bool.isRequired,
   actions: PropTypes.object.isRequired
-};*/
+};
 
 /**
  * Keep in mind that 'state' isn't the state of local object, but your single

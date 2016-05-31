@@ -1,0 +1,44 @@
+//topBar
+.TopBar {
+    height: 80px;
+    padding: 3px;
+}
+
+.PathBtn {
+    width: 95%;
+    height: 35px;
+    background-color: white;
+    border: 1px solid #d0d0d0;
+}
+
+.PathBtn li {
+    background-color: transparent;
+    margin: 5px 2px 2px 2px;
+    display: inline-block;
+    color: #4c4c4c;
+    &:hover {
+        color: #6dc2d7;
+        cursor: pointer;
+    }
+    
+    &::before {
+        content: '>';
+        border: solid 1px white;
+        padding: 2px;
+        margin: 0 10px 0 0;
+    }
+}
+
+.dropdown-toggle {
+    float: right;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 40px;
+    left: 91%;
+}
+
+.dropdown-menu.show {
+    display: block;
+}
