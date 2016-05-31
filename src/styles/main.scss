@@ -13,6 +13,17 @@ html, body, #root, .wrap {
     clear: both;
 }
 
+.icon-view {
+    display: flex;
+    justify-content: space-between;
+    flex-flow: row wrap;
+}
+
+.fakeDiv {
+    width: 75px;
+    height: 0;
+}
+
 .PathBtn {
     width: 95%;
     height: 35px;
@@ -165,8 +176,8 @@ image using the content attribute.
 }
 
 .dataItem {
-    float: left;
-    margin-left: 3px;
+    //float: left;
+    //margin-left: 3px;
     width: 100px;
     height: 200px;
 }

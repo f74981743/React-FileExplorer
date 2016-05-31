@@ -47,6 +47,7 @@ export default class ContentArea extends Component {
             hide: displayMode === 1 || datas.length === 0
         }),
         iconViewCls = classNames({
+           'icon-view': true,
            row: true,
            hide: displayMode === 0
         }),
@@ -80,6 +81,16 @@ export default class ContentArea extends Component {
                         <DataItem data={data} dataPerPage={dataPerPage} actions={actions} key={index} />
                     )
                 }
+                <div className='fakeDiv'></div>
+                <div className='fakeDiv'></div>
+                <div className='fakeDiv'></div>
+                <div className='fakeDiv'></div>
+                <div className='fakeDiv'></div>
+                <div className='fakeDiv'></div>
+                <div className='fakeDiv'></div>
+                <div className='fakeDiv'></div>
+                <div className='fakeDiv'></div>
+                <div className='fakeDiv'></div>
             </div>
             
         </div>
